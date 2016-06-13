@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Lista de marcas</h1>
+	<br>
+	<a href="{% url 'vista_agregar_Marca' %}"> Agregar una marca</a>
+	{% if marca %}
+		{% for p in marca %}
+			<p>
+				nombre : {{ p.nombre }}
+				
+				<a href="/marca/{{ p.id }}"> Mostrar  </a>
+				
+			</p>
+
+			
+		{% endfor %}
+	{% else %}
+		<h2>No existen esa marca :( </h2>
+	{% endif %}
+{% endblock %}
